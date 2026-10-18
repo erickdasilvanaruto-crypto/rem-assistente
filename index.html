@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#8e668e">
+  <title>Rem — sua companheira de projetos</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="avatar" aria-hidden="true">R</div>
+      <div class="brand">
+        <h1>Rem</h1>
+        <p>Sua parceira de ideias e programação ✨</p>
+      </div>
+      <button id="settingsBtn" class="icon-btn" aria-label="Configurações" title="Configurações">⚙️</button>
+    </header>
+
+    <section id="settingsPanel" class="settings hidden">
+      <h2>Conectar o cérebro da Rem</h2>
+      <p class="hint">Configure uma API compatível com OpenAI. Não coloque sua chave em um site público: esta versão chama a API diretamente do navegador.</p>
+      <label>Endereço da API
+        <input id="apiUrl" type="url" value="https://openrouter.ai/api/v1/chat/completions" placeholder="https://.../chat/completions">
+      </label>
+      <label>Modelo
+        <input id="model" type="text" value="openai/gpt-4o-mini" placeholder="nome-do-modelo">
+      </label>
+      <label>Chave da API
+        <input id="apiKey" type="password" autocomplete="off" placeholder="Cole sua chave aqui">
+      </label>
+      <div class="settings-actions">
+        <button id="saveSettings" class="primary">Salvar neste aparelho</button>
+        <button id="clearSettings" class="secondary">Apagar chave</button>
+      </div>
+      <p class="tiny">A chave fica salva no armazenamento local deste navegador. Para um app público, vamos trocar isso por um servidor seguro.</p>
+    </section>
+
+    <section id="chat" class="chat" aria-live="polite">
+      <div class="welcome">
+        <div class="welcome-mark">✿</div>
+        <h2>Oi! Eu sou a Rem 💙</h2>
+        <p>Estou pronta para criar jogos, experimentar ideias e aprender programação com você. O que vamos construir hoje?</p>
+        <div class="chips">
+          <button class="chip" data-prompt="Me ajude a criar meu primeiro jogo.">🎮 Criar um jogo</button>
+          <button class="chip" data-prompt="Me ensine programação do zero, com um exercício simples.">💻 Aprender programação</button>
+          <button class="chip" data-prompt="Vamos pensar em uma ideia criativa para um projeto.">💡 Ter uma ideia</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="status" class="status">Modo inicial: configure uma API para conversar com uma IA real.</div>
+    <form id="composer" class="composer">
+      <button type="button" id="micBtn" class="tool-btn" aria-label="Falar" title="Falar">🎙️</button>
+      <textarea id="message" rows="1" placeholder="Converse com a Rem..." aria-label="Mensagem"></textarea>
+      <button type="submit" id="sendBtn" class="send-btn" aria-label="Enviar">➤</button>
+    </form>
+    <footer>Protótipo REM v0.1 · Feito para evoluir com você</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

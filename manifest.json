@@ -1,0 +1,10 @@
+{
+  "name": "Rem — Assistente pessoal",
+  "short_name": "Rem",
+  "description": "Protótipo da sua parceira de programação e projetos.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7f4f8",
+  "theme_color": "#8e668e",
+  "icons": []
+}
